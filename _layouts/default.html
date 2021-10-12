@@ -56,180 +56,142 @@
             </td>
           </tr>
         </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'research' %}
           <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/varVPACvsVAAC_TD.png" alt="3DSP" width="160" height="120" style="border-style: none">
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
+            <td width="75%" valign="middle">
+              <papertitle>Variance Penalized On-Policy and Off-Policy Actor-Critic</papertitle>
               <br>
-              {{post.authors}}
-
+              <strong>Arushi Jain</strong>, Gandharv Patil,               Ayush Jain, Khimya Khetarpal, Doina Precup
               <br>
-              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
+              <em>AAAI</em>, 2021 
               <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
+              <a href="https://arxiv.org/pdf/2102.01985.pdf">paper</a>
+              /
+              <a href="https://github.com/arushijain94/VariancePenalizedActorCritic">code</a>
+              /
+              <a href="https://virtual.2021.aaai.org/paper_AAAI-10043.html">talk</a>
+              /
+              <a href="https://arushijain94.github.io/data/AAAI_2021_VPAC_Presentation.pdf">slides</a>
+              /              
+              <a href="https://arushijain94.github.io/data/AAAI_2021_Poster_VPAC.pdf">poster</a>
             </td>
           </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
           <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Intel Projects</h2>
-              <p>Besides my work on the RealSense depth sensors and the publications above, a sampling of my publicly disclosed work
-              </p>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/FR_Return_Paper.png" alt="3DSP" width="160" height="120" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+              <papertitle>Safe Option-Critic: Learning Safety in the Option-Critic Architecture</papertitle>
+              <br>
+              <strong>Arushi Jain*</strong>, Khimya Khetarpal*, Doina Precup
+              <br>
+              <em>Knowledge Engineering Review (KER) Journal</em>, 2021. (Cambridge University Press Journal) 
+              <br>
+              <em>Adaptive Learning Agents (ALA) Workshop, ICML</em>, 2018.
+              <br>  
+              <a href="https://arxiv.org/pdf/1807.08060.pdf">paper</a>
+              /
+              <a href="https://github.com/arushijain94/SafeOptionCritic">code</a>
+              /
+              <a href="https://arushijain94.github.io/data/slides-safe-option-critic.pdf">slides</a>
+              /              
+              <a href="https://arushijain94.github.io/data/PosterALA2018.pdf">poster</a>
             </td>
           </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'Intel' %}
           <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/thesis.png" alt="3DSP" width="160" height="120" style="border-style: none">
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
+            <td width="75%" valign="middle">
+              <papertitle>Safety using Constraint Variance in Policy-Gradient Methods</papertitle>
               <br>
-              <em>{{post.categories}} {{post.course}}</em>
+              <strong>Arushi Jain</strong>
               <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-
+              <em>Master's thesis, McGill University</em>, March 2020.
               <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
+              <a href="https://escholarship.mcgill.ca/concern/theses/ht24wp57p?locale=en">paper</a>
             </td>
           </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
           <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Other Projects</h2>
-              <p> These include coursework, side projects and unpublished research work.
-              </p>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/AC_SAC.png" alt="3DSP" width="160" height="120" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+              <papertitle>Safe Actor-Critic</papertitle>
+              <br>
+              <strong>Arushi Jain*</strong>, Ayush Jain, Doina Precup
+              <br>
+              <em><a href="https://sites.google.com/view/rl-uai2018/schedule?authuser=0">Safety, Risk and Uncertainty in RL Workshop, UAI</a></em>, 2018.
+              <br>
+              <em>Women in ML (WiML) Workshop, NeurIPS </em>, 2018.
+              <br> 
+              <a href="https://arushijain94.github.io/data/RL-UAI18_paper_7-2.pdf">paper</a>
+              /              /
+              <a href="https://arushijain94.github.io/data/UAI_Workshop__Talk.pdf">slides</a>
+              /              
+              <a href="https://arushijain94.github.io/data/PosterUAI2018___Safe_Actor_Critic_Workshop">poster</a>
             </td>
           </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat != 'research' and cat != 'Intel' %}
           <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/rldm.png" alt="3DSP" width="160" height="120" style="border-style: none">
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
+            <td width="75%" valign="middle">
+              <papertitle>Safe Hierarchical Policy Optimization using Constrained Return Variance in Options</papertitle>
               <br>
-              <em>{{post.categories}} {{post.course}}</em>
+              <strong>Arushi Jain*</strong>, Doina Precup
               <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-
+              <em><a href="https://rldm.org/">RLDM</a></em>, 2019.
               <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
+              <a href="https://arushijain94.github.io/data/RLDM_CameraReady.pdf">paper</a>
             </td>
           </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
+
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/safe_oc_trajectory.png" alt="3DSP" width="160" height="120" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+              <papertitle>Learning Options using Constrained Return Variance</papertitle>
+              <br>
+              <strong>Arushi Jain*</strong>, Doina Precup
+              <br>
+              <em><a href="https://sites.google.com/view/neurips19-safe-robust-workshop">Safety and Robustness in Decision Making Workshop</a> , NeurIPS</em>, 2019.
+              <br>
+              <a href="https://arushijain94.github.io/data/safety_robustness_neurips.pdf">paper</a>
+              /
+              <a href="https://arushijain94.github.io/data/safety_robustness_neurips_poster.pdf">poster</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/gsais.png" alt="3DSP" width="160" height="120" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+              <papertitle>Safe Policy Learning with Constrained Return Variance</papertitle>
+              <br>
+              <strong>Arushi Jain*</strong>
+              <br>
+              <em><a href="https://www.caiac.ca/en/conferences/canadianai-2019/program">Graduate Student AI Symposium</a>, Canadian AI Conference</em>, 2019.
+              <br>
+              <em>Proceeding published in LNAI Series by Springer Verlag.</em>
+              <br>
+              <a href="https://arushijain94.github.io/data/GSAIS_2019_CameraReady.pdf">paper</a>
+              /
+              <a href="https://arushijain94.github.io/data/GSAIS_talk.pdf">talk</a>
+            </td>
+          </tr>
+
+        </tbody></table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
