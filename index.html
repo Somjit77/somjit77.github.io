@@ -1,315 +1,570 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Somjit Nath</title>
-  
-  <meta name="author" content="Somjit Nath">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="./index_files/stylesheet.css">
+  <meta name="author" content="Somjit Nath" />
+  <meta
+    name="description"
+    content="Somjit Nath is a PhD student at McGill University and Mila working on reinforcement learning, representation learning, model based RL, and real world sequential decision making."
+  />
+  <style>
+    :root {
+      --bg: #fcfcfd;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --maxw: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(92%, var(--maxw));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 56px 0 28px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-card,
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 34px;
+    }
+
+    .name {
+      margin: 0 0 10px;
+      font-size: 2.4rem;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .title {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .bio p {
+      margin: 0 0 14px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 20px;
+      font-size: 0.98rem;
+    }
+
+    .link-pill {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #f8fafc;
+    }
+
+    .photo-card {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .photo-card img {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      background: #eef2f7;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(252, 252, 253, 0.85);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+    }
+
+    .nav-inner {
+      width: min(92%, var(--maxw));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      padding: 14px 0;
+      font-size: 0.95rem;
+    }
+
+    main {
+      padding: 28px 0 64px;
+    }
+
+    section {
+      margin: 0 0 26px;
+    }
+
+    .section-card {
+      padding: 28px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .news-list,
+    .bullets {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .news-list li,
+    .bullets li {
+      margin-bottom: 10px;
+    }
+
+    .experience-item,
+    .paper-item {
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .experience-item:first-of-type,
+    .paper-item:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .role-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .role-title {
+      font-weight: 700;
+      font-size: 1.03rem;
+    }
+
+    .role-date {
+      color: var(--muted);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .role-org {
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .paper-title {
+      font-weight: 700;
+      font-size: 1.02rem;
+    }
+
+    .paper-meta {
+      color: var(--muted);
+      margin: 4px 0 8px;
+      font-size: 0.96rem;
+    }
+
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      font-size: 0.95rem;
+      margin-top: 6px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    footer {
+      padding: 12px 0 50px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card {
+        order: -1;
+      }
+
+      .name {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-card,
+      .section-card {
+        padding: 22px;
+        border-radius: 16px;
+      }
+
+      .name {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Somjit Nath</name>
-              </p>
-              <p>
-                I am a PhD Student at <a href="https://www.mcgill.ca/">McGill University</a>/<a href="https://mila.quebec/"> Mila</a> where I am advised by Professor <a href="https://www.cim.mcgill.ca/~derek/"> Derek Nowrouzezahrai </a> and Professor <a href="https://saebrahimi.github.io/"> Samira Ebrahimi Kahou. </a> I am currently working on representation learning for reinforcement learning.
-                Previously, I was a Researcher at <a href="https://www.tcs.com/careers/india/research-and-innovation">TCS Research</a>, working under the supervision of <a href="https://sites.google.com/view/harshad/home">Harshad Khadilkar</a>, where I worked on applying Reinforcement Learning to Supply Chains and addressing the challenges that come with it.
-              </p>
-              <p>
-                I did my Masters from the University of Alberta where I was advised by <a href="https://webdocs.cs.ualberta.ca/~whitem/"> Martha White</a>. My thesis formulates a new approach for training Recurrent Neural Networks. I also worked on non-linear value function approximation for Reinforcement Learning.
-                My undergrad was in Electrical Engineering from <a href="http://www.jaduniv.edu.in/"> Jadavpur University</a>, during which I worked mostly in the Internet of Things (IOT) domain along with medical imaging.</p>
-              <!-- <p>
-                Interests: My main interests lie in the field of <strong>reinforcement learning</strong>. My fasication for RL developed after taking Rich Sutton's course during my Masters. In the context of RL, I am also interested in <strong>representation learning</strong>, <strong>model based RL</strong> and <strong>exploration</strong>.
-              </p> -->
-              <p style="text-align:center">
-                <a href="mailto:somjit.nath@mail.mcgill.ca">Email</a> &nbsp;/&nbsp;
-                <a href="https://somjit77.github.io/data/Somjit_Nath_CV.pdf">CV</a> &nbsp;/&nbsp;
-                <a href="https://twitter.com/Somjit77">Twitter</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=fNjl1AwAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                <a href="https://www.linkedin.com/in/somjit-nath-077b4083"> LinkedIn </a> &nbsp;/&nbsp;
-                <a href="https://www.github.com/Somjit77"> Github </a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="https://somjit77.github.io/images/prof_pic.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="https://somjit77.github.io/images/circular_prof_pic.png" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Latest News</heading>
-              <ul>
-                <li> Our work on Spectral Temporal Contrastive Learning has been accepted at NeurIPS 2023 Workshop: Self-Supervised Learning - Theory and Practice. </li>
-                <li> Our work on Prioritizing Samples in Reinforcement Learning with Reducible Loss has been accepted to NeurIPS 2023. </li>
-                <li> Excited to announce I joined Borealis AI as a Machine Learning Research Intern for Summer 2023. </li>
-                <li> Our work on Learning object-centric representations with General Value Functions has been accepted at ICML 2023.</li>
-                <li> Our paper on Exploration with General Value Functions has been accepted at AAMAS Main Track 2023.</li>
-                <li> Locally Constrained Representations in Reinforcement Learning (joint work with Prof. Samira Ebrahimi Kahou) accepted to Deep RL Workshop, Neurips 2022.</li>
-                <li> Prioritizing Samples in Reinforcement Learning with Reducible Loss (joint work with Shivakanth Sujit, Pedro Braga and Prof. Samira Ebrahimi Kahou) accepted to Deep RL Workshop, Neurips 2022. </li>
-                <li> Our work on Handling Uncertain Lead Times in Supply Chains has been accepted at the 15th European Workshop on Reinforcement Learning (EWRL 2022). </li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-        </table>
+  <header class="container">
+    <div class="hero">
+      <div class="hero-card">
+        <h1 class="name">Somjit Nath</h1>
+        <p class="title">
+          PhD Student, Electrical and Computer Engineering, McGill University and Mila, Montréal
+        </p>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                My main interests lie in the field of <strong>reinforcement learning</strong>. My fascination for RL developed after taking Rich Sutton's course during my Masters. In the context of RL, I am also interested in <strong>representation learning</strong>, <strong>model based RL</strong> and <strong>exploration</strong>.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <div class="bio">
+          <p>
+            I am a PhD student at <a href="https://www.mcgill.ca/">McGill University</a> and
+            <a href="https://mila.quebec/">Mila</a>, advised by
+            <a href="https://www.cim.mcgill.ca/~derek/">Derek Nowrouzezahrai</a> and
+            <a href="https://saebrahimi.github.io/">Samira Ebrahimi Kahou</a>.
+            My research focuses on reinforcement learning, representation learning,
+            model based RL, and real world sequential decision making.
+          </p>
 
-        <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/relo.png" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Prioritizing Samples in Reinforcement Learning with Reducible Loss</papertitle>
-              <br>
-              Shivakanth Sujit, <strong>Somjit Nath</strong>, Pedro H. M. Braga, Samira Ebrahimi Kahou
-              <br>
-              <em>Neural Information Processing Systems (NeurIPS)</em>, 2023
-              <br>
-              <a href="https://shivakanthsujit.github.io/reducible-loss/">project</a>
-              /
-              <a href="https://arxiv.org/pdf/2208.10483.pdf">paper</a>
-              /
-              <a href="https://github.com/shivakanthsujit/reducible-loss">code</a>
-              /
-              <a href="https://drive.google.com/file/d/1ug2Z1GqWDpYIEvdx1m9BVImm0fphhJvK/view">slides</a>
-            </td>
-          </tr>  
-          
-        <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/oc-gvf.png" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Discovering Object-Centric Generalized Value Functions From Pixels</papertitle>
-              <br>
-              <strong>Somjit Nath</strong>, Gopeshh Raaj Subbaraj, Khimya Khetarpal, Samira Ebrahimi Kahou
-              <br>
-              <em>International Conference on Machine Learning (ICML)</em>, 2023
-              <br>
-              <a href="https://arxiv.org/abs/2304.13892">paper</a>
-              /
-              <a href="https://github.com/Somjit77/oc_gvfs">code</a>
-            </td>
-          </tr>  
-          
-        <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/gvf.png" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Follow your Nose: Using General Value Functions for Directed Exploration in Reinforcement Learning</papertitle>
-              <br>
-              Durgesh Kalwar, Omkar Shelke, <strong>Somjit Nath</strong>, Hardik Meisheri, Harshad Khadilkar
-              <br>
-              <em>International Conference on Autonomous Agents and Multiagent Systems (AAMAS)</em>, 2023
-              <br>
-              <a href="https://arxiv.org/pdf/2203.00874.pdf">paper</a>
-              /
-              <a href="https://somjit77.github.io/data/AAAI_Poster.pdf">poster</a>
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/ewrl.png" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>A Learning Based Framework for Handling Uncertain Lead Times in Multi-Product Inventory Management</papertitle>
-              <br>
-              Hardik Meisheri, <strong>Somjit Nath</strong>, Mayank Baranwal, Harshad Khadilkar
-              <br>
-              <em>European Workshop on Reinforcement Learning (EWRL)</em>, 2022
-            <br>
-               <a href="https://ewrl.files.wordpress.com/2022/09/icaps_delayed_supply.pdf">paper</a>
-            </td>
-          </tr>
+          <p>
+            I am interested in how agents can learn structured, predictive representations
+            of their environment to enable efficient learning, long horizon reasoning,
+            and generalization in complex environments.
+          </p>
 
+          <p>
+            Recently, I was a Research Intern at Microsoft Research Cambridge, where I worked
+            on improving sample efficient imitation learning in video based environments.
+            I was also a Scientist in Residence at 4Division and Mila, where I worked on
+            scalable Robotics Transformer models for real world robotic learning.
+          </p>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/cikm.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Revisiting State Augmentation methods for Reinforcement Learning with Stochastic Delays</papertitle>
-              <br>
-              <strong>Somjit Nath</strong>, Mayank Baranwal, Harshad Khadilkar
-              <br>
-              <em>Conference on Information and Knowledge Management (CIKM)</em>, 2021
-              <br>
-              <a href="https://dl.acm.org/doi/abs/10.1145/3459637.3482386">paper</a>
-              /
-              <a href="https://github.com/baranwa2/DelayResolvedRL">code</a>
-              /
-              <a href="https://somjit77.github.io/data/CIKM_Presentation.pdf">slides</a>
-              /              
-              <a href="https://somjit77.github.io/data/CIKM_Poster.pdf">poster</a>
-            </td>
-          </tr>
+          <p>
+            Previously, I was a Machine Learning Research Intern at RBC Borealis AI and a
+            Researcher at TCS Research, where I worked on reinforcement learning for
+            continuous time event data and supply chain optimization.
+          </p>
+        </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/nca.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Scalable multi-product inventory control with lead time constraints using reinforcement learning</papertitle>
-              <br>
-              Hardik Meisheri, Nazneen N Sultana, Mayank Baranwal, Vinita Baniwal, <strong>Somjit Nath</strong>, Satyam Verma, Balaraman Ravindran, Harshad Khadilkar
-              <br>
-              <em>Neural Computing and Applications (NCA) </em>, 2021.
-              <br>
-              <a href="https://link.springer.com/article/10.1007/s00521-021-06129-w">paper</a>
-            </td>
-          </tr>
+        <div class="links">
+          <a class="link-pill" href="mailto:somjitnath@gmail.com">Email</a>
+          <a class="link-pill" href="data/Somjit_Nath_CV.pdf">CV</a>
+          <a class="link-pill" href="https://scholar.google.com/citations?user=fNjl1AwAAAAJ">Google Scholar</a>
+          <a class="link-pill" href="https://www.linkedin.com/in/somjit-nath-077b4083">LinkedIn</a>
+          <a class="link-pill" href="https://github.com/Somjit77">GitHub</a>
+          <a class="link-pill" href="https://twitter.com/Somjit77">Twitter</a>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/aamas.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>SIBRE: Self Improvement Based REwards for Adaptive Feedback in Reinforcement Learning</papertitle>
-              <br>
-              <strong>Somjit Nath</strong>, Richa Verma, Abhik Ray, Harshad Khadilkar
-              <br>
-              <em>International Conference on Autonomous Agents and Multiagent Systems (AAMAS)</em>, 2021.
-              <br>
-              <a href="https://www.ifaamas.org/Proceedings/aamas2021/pdfs/p1607.pdf">paper</a>
-            </td>
-          </tr>
+      <div class="hero-card photo-card">
+        <img src="images/circular_prof_pic.png" alt="Somjit Nath profile photo" />
+      </div>
+    </div>
+  </header>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/fpp.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Training Recurrent Neural Networks Online by Learning Explicit State Variables </papertitle>
-              <br>
-              <strong>Somjit Nath</strong>, Vincent Liu, Alan Chan, Xin Li, Adam White, Martha White
-              <br>
-              <em>International Conference on Learning Representations(ICLR)</em>, 2020.
-              <br> 
-              <a href="https://openreview.net/pdf?id=SJgmR0NKPr">paper</a>
-              /
-              <a href="https://somjit77.github.io/data/FPP.pdf">slides</a>
-              /
-              <a href="https://github.com/VincentLiu3/fpp">code</a>
-            </td>
-          </tr>
+  <nav>
+    <div class="nav-inner">
+      <a href="#news">News</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Selected Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#education">Education</a>
+    </div>
+  </nav>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/ttn.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Two-Timescale Networks for Nonlinear Value Function Approximation</papertitle>
-              <br>
-               Wesley Chung, <strong>Somjit Nath</strong>, Ajin Joseph, Martha White
-              <br>
-              <em>International Conference on Learning Representations(ICLR)</a></em>, 2019.
-              <br>
-              <a href="https://openreview.net/pdf?id=rJleN20qK7">paper</a>
-            </td>
-          </tr>
+  <main class="container">
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/fpp_old.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>A Fixed-Point Formulation for Recurrent Neural Networks</papertitle>
-              <br>
-              <strong>Somjit Nath</strong>, Taher Jafferjee and Martha White
-              <br>
-              <em> Continual Learning Workshop, Neural Information Processing Systems(NeurIPS) </em>, 2018.
-              <br>
-              <a href="https://marcpickett.com/cl2018/CL-2018_paper_74.pdf">paper</a>
-            </td>
-          </tr>
+    <section id="news">
+      <div class="section-card">
+        <h2>Latest News</h2>
+        <ul class="news-list">
+          <li>Joined Microsoft Research Cambridge as a Research Intern working on sample efficient imitation learning.</li>
+          <li>Served as Scientist in Residence at 4Division and Mila working on Robotics Transformer models.</li>
+          <li>Our paper <em>Behaviour Discovery and Attribution for Explainable Reinforcement Learning</em> appeared in TMLR 2025.</li>
+          <li>Our paper <em>Unsupervised Event Outlier Detection in Continuous Time</em> was accepted at the NeurIPS 2024 Self Supervised Learning Workshop.</li>
+          <li>Our work on Task Oriented Slot Based Cumulant Discovery in General Value Functions was selected as a spotlight at the RLC 2024 workshop.</li>
+          <li>Received Outstanding Reviewer Awards at ICML 2025 and ICCV 2023.</li>
+        </ul>
+      </div>
+    </section>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/rej_s.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Rejection Sampling for Off-Policy Learning </papertitle>
-              <br>
-              Wesley Chung, Sina Ghiassian, <strong>Somjit Nath</strong>, and Martha White
-              <br>
-              <em> Continual Learning Workshop, Neural Information Processing Systems(NeurIPS) </em>, 2018.
-              <br>
-              <a href="https://marcpickett.com/cl2018/CL-2018_paper_71.pdf">paper</a>
-            </td>
-          </tr>
+    <section id="research">
+      <div class="section-card">
+        <h2>Research</h2>
+        <p>
+          My research focuses on <strong>reinforcement learning</strong>,
+          <strong>representation learning</strong>, and
+          <strong>model based decision making</strong>. I am particularly interested in how
+          agents can learn predictive and structured representations that support efficient
+          learning, exploration, planning, and generalization in complex environments.
+        </p>
+        <p>
+          More broadly, I am interested in bridging reinforcement learning with world models,
+          self supervised learning, imitation learning, and real world sequential decision problems.
+        </p>
+      </div>
+    </section>
 
-        <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/iet.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Smartphone Camera Based Analysis of ELISA using Artificial Neural Network  </papertitle>
-              <br>
-              <strong>Somjit Nath</strong>, Subhannita Sarcar, Biswendu Chatterjee, Nabendu Chatterjee, Rhishita Chourashi
-              <br>
-              <em>  IET Computer Vision </em>, 2018.
-              <br>
-              <a href="https://digital-library.theiet.org/content/journals/10.1049/iet-cvi.2017.0585">paper</a>
-            </td>
-          </tr>
+    <section id="experience">
+      <div class="section-card">
+        <h2>Experience</h2>
 
-        <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/rfid.jpg" alt="3DSP" width="160" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Arduino Based Door Unlocking System with Real Time Control </papertitle>
-              <br>
-              <strong>Somjit Nath</strong>, Paramita Banerjee, Rathindra Nath Biswas, Swarup Kumar Mitra and Mrinal Kanti Naskar
-              <br>
-              <em> International Conference on Contemporary Computing and Informatics (IC3I) </em>, 2016.
-              <br>
-              <a href="https://ieeexplore.ieee.org/document/7917989/">paper</a>
-            </td>
-          </tr>
+        <div class="experience-item">
+          <div class="role-row">
+            <div class="role-title">Research Intern</div>
+            <div class="role-date">May 2025 – Aug 2025</div>
+          </div>
+          <div class="role-org">Microsoft Research Cambridge, United Kingdom</div>
+          <div>
+            Worked on improving representation learning approaches for sample efficient
+            imitation learning in video game environments.
+          </div>
+        </div>
 
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:center;font-size:small;">
-                  Source code and style from  <a href="https://jonbarron.info/">Jon Barron's website.</a>
-                </p>
-              </td>
-            </tr>
-            
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </tbody></table>
+        <div class="experience-item">
+          <div class="role-row">
+            <div class="role-title">Scientist in Residence</div>
+            <div class="role-date">Jun 2024 – Sep 2024</div>
+          </div>
+          <div class="role-org">4Division and Mila, Montréal, Canada</div>
+          <div>
+            Worked on scalable Robotics Transformer models trained on diverse robotic data
+            for strong real world generalization.
+          </div>
+        </div>
 
+        <div class="experience-item">
+          <div class="role-row">
+            <div class="role-title">Machine Learning Research Intern</div>
+            <div class="role-date">May 2023 – Aug 2023</div>
+          </div>
+          <div class="role-org">RBC Borealis, Montréal, Canada</div>
+          <div>
+            Developed an unsupervised outlier detection framework in continuous time event
+            sequences using reinforcement learning.
+          </div>
+        </div>
 
+        <div class="experience-item">
+          <div class="role-row">
+            <div class="role-title">Researcher, Data and Decision Sciences</div>
+            <div class="role-date">Nov 2019 – Jan 2022</div>
+          </div>
+          <div class="role-org">Tata Consultancy Services Research and Innovation, Mumbai, India</div>
+          <div>
+            Applied reinforcement learning to multi product, multi node inventory management,
+            improving performance over existing industry approaches, and developed RL methods
+            for delayed actions and observations.
+          </div>
+        </div>
 
-</body></html>
+        <div class="experience-item">
+          <div class="role-row">
+            <div class="role-title">Research Intern</div>
+            <div class="role-date">May 2015 – Jul 2015</div>
+          </div>
+          <div class="role-org">Indian Statistical Institute, Kolkata, India</div>
+          <div>
+            Worked on OCR and character segmentation methods for Bengali and English text.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-card">
+        <h2>Selected Publications</h2>
+
+        <div class="paper-item">
+          <div class="paper-title">Behaviour Discovery and Attribution for Explainable Reinforcement Learning</div>
+          <div class="paper-meta">
+            Rishav Rishav, <strong>Somjit Nath</strong>, Vincent Michalski, Samira Ebrahimi Kahou · TMLR 2025
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Unsupervised Event Outlier Detection in Continuous Time</div>
+          <div class="paper-meta">
+            <strong>Somjit Nath</strong>, Kry Yik-Chau Lui, Siqi Liu · NeurIPS Workshop 2024
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Task Oriented Slot Based Cumulant Discovery in General Value Functions</div>
+          <div class="paper-meta">
+            Vincent Michalski, <strong>Somjit Nath</strong>, Derek Nowrouzezahrai, Doina Precup, Samira Ebrahimi Kahou · RLC Workshop 2024
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Spectral Temporal Contrastive Learning</div>
+          <div class="paper-meta">
+            Sacha Morin, <strong>Somjit Nath</strong>, Samira Ebrahimi Kahou, Guy Wolf · NeurIPS Workshop 2023
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Prioritizing Samples in Reinforcement Learning with Reducible Loss</div>
+          <div class="paper-meta">
+            Shivakanth Sujit, <strong>Somjit Nath</strong>, Pedro H. M. Braga, Samira Ebrahimi Kahou · NeurIPS 2023
+          </div>
+          <div class="paper-links">
+            <a href="https://shivakanthsujit.github.io/reducible-loss/">Project</a>
+            <a href="https://arxiv.org/pdf/2208.10483.pdf">Paper</a>
+            <a href="https://github.com/shivakanthsujit/reducible-loss">Code</a>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Discovering Object-Centric Generalized Value Functions From Pixels</div>
+          <div class="paper-meta">
+            <strong>Somjit Nath</strong>, Gopeshh Raaj Subbaraj, Khimya Khetarpal, Samira Ebrahimi Kahou · ICML 2023
+          </div>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2304.13892">Paper</a>
+            <a href="https://github.com/Somjit77/oc_gvfs">Code</a>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Follow your Nose: Using General Value Functions for Directed Exploration in Reinforcement Learning</div>
+          <div class="paper-meta">
+            Durgesh Kalwar, Omkar Shelke, <strong>Somjit Nath</strong>, Hardik Meisheri, Harshad Khadilkar · AAMAS 2023
+          </div>
+          <div class="paper-links">
+            <a href="https://arxiv.org/pdf/2203.00874.pdf">Paper</a>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Revisiting State Augmentation Methods for Reinforcement Learning with Stochastic Delays</div>
+          <div class="paper-meta">
+            <strong>Somjit Nath</strong>, Mayank Baranwal, Harshad Khadilkar · CIKM 2021
+          </div>
+          <div class="paper-links">
+            <a href="https://dl.acm.org/doi/abs/10.1145/3459637.3482386">Paper</a>
+            <a href="https://github.com/baranwa2/DelayResolvedRL">Code</a>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">SIBRE: Self Improvement Based Rewards for Adaptive Feedback in Reinforcement Learning</div>
+          <div class="paper-meta">
+            <strong>Somjit Nath</strong>, Richa Verma, Abhik Ray, Harshad Khadilkar · AAMAS 2021
+          </div>
+          <div class="paper-links">
+            <a href="https://www.ifaamas.org/Proceedings/aamas2021/pdfs/p1607.pdf">Paper</a>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Training Recurrent Neural Networks Online by Learning Explicit State Variables</div>
+          <div class="paper-meta">
+            <strong>Somjit Nath</strong>, Vincent Liu, Alan Chan, Xin Li, Adam White, Martha White · ICLR 2020
+          </div>
+          <div class="paper-links">
+            <a href="https://openreview.net/pdf?id=SJgmR0NKPr">Paper</a>
+            <a href="https://github.com/VincentLiu3/fpp">Code</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="two-col">
+        <div class="section-card" id="awards">
+          <h2>Awards and Service</h2>
+          <ul class="bullets">
+            <li>Outstanding Reviewer, ICML 2025</li>
+            <li>Outstanding Reviewer, ICCV 2023</li>
+            <li>McGill Engineering Doctoral Award</li>
+            <li>TCS Citation Award, 2021 and 2022</li>
+            <li>Scholarship for Academic Excellence, State Electrical Engineers’ Association</li>
+          </ul>
+        </div>
+
+        <div class="section-card" id="education">
+          <h2>Education</h2>
+          <ul class="bullets">
+            <li><strong>McGill University and Mila</strong><br />PhD in Electrical and Computer Engineering, 2022 – present</li>
+            <li><strong>University of Alberta</strong><br />MSc in Computing Science, 2017 – 2019</li>
+            <li><strong>Jadavpur University</strong><br />BE in Electrical Engineering, 2013 – 2017</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <p>
+      Website source inspired by academic personal pages. Last updated 2026.
+    </p>
+  </footer>
+
+</body>
+</html>
