@@ -7,7 +7,7 @@
   <meta name="author" content="Somjit Nath" />
   <meta
     name="description"
-    content="Somjit Nath is a PhD student at McGill University and Mila working on reinforcement learning, representation learning, model based RL, and real world sequential decision making."
+    content="Somjit Nath is a Machine Learning Researcher at RBC Borealis working on commercial credit, and a PhD candidate at McGill University and Mila researching reinforcement learning, representation learning, and world models."
   />
   <style>
     :root {
@@ -227,6 +227,28 @@
       margin-top: 6px;
     }
 
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 4px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #f8fafc;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: -10px 0 16px;
+    }
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -275,36 +297,32 @@
       <div class="hero-card">
         <h1 class="name">Somjit Nath</h1>
         <p class="title">
-          PhD Student, Electrical and Computer Engineering, McGill University and Mila, Montréal, Canada
+          Machine Learning Researcher, RBC Borealis · PhD Candidate, McGill University and Mila · Montréal, Canada
         </p>
 
         <div class="bio">
           <p>
-            I am a PhD student at <a href="https://www.mcgill.ca/">McGill University</a> and
+            I am a Machine Learning Researcher at <a href="https://rbcborealis.com/">RBC Borealis</a> in Montréal,
+            where I work on machine learning for commercial credit.
+          </p>
+
+          <p>
+            I am also a PhD candidate at <a href="https://www.mcgill.ca/">McGill University</a> and
             <a href="https://mila.quebec/">Mila</a>, advised by
             <a href="https://www.cim.mcgill.ca/~derek/">Derek Nowrouzezahrai</a> and
             <a href="https://saebrahimi.github.io/">Samira Ebrahimi Kahou</a>.
-            My research focuses on reinforcement learning, representation learning,
-            model based RL, and real world sequential decision making.
+            My PhD research focuses on reinforcement learning, representation learning, and world models:
+            how agents can learn structured, predictive representations of their environment to enable
+            efficient learning, long horizon reasoning, and generalization. Recently, this has led me to study
+            what video diffusion models implicitly learn about physics.
           </p>
 
           <p>
-            I am interested in how agents can learn structured, predictive representations
-            of their environment to enable efficient learning, long horizon reasoning,
-            and generalization in complex environments.
-          </p>
-
-          <p>
-            Recently, I was a Research Intern at Microsoft Research Cambridge, where I worked
-            on improving sample efficient imitation learning in video based environments.
-            I was also a Scientist in Residence at 4Division and Mila, where I worked on
-            scalable Robotics Transformer models for real world robotic learning.
-          </p>
-
-          <p>
-            Previously, I was a Machine Learning Research Intern at RBC Borealis AI and a
-            Researcher at TCS Research, where I worked on reinforcement learning for
-            continuous time event data and supply chain optimization.
+            Before joining RBC Borealis full time, I was a Research Intern at Microsoft Research Cambridge,
+            working on sample efficient imitation learning from video in games, and a Scientist in Residence
+            at 4Division and Mila, working on scalable Robotics Transformer models. Earlier, I was a
+            Machine Learning Research Intern at RBC Borealis and a Researcher at TCS Research, working on
+            reinforcement learning for continuous time event data and supply chain optimization.
           </p>
         </div>
 
@@ -327,7 +345,7 @@
   <nav>
     <div class="nav-inner">
       <a href="#news">News</a>
-      <a href="#research">Research</a>
+      <a href="#research">Research Interests</a>
       <a href="#experience">Experience</a>
       <a href="#publications">Selected Publications</a>
       <a href="#awards">Awards</a>
@@ -341,11 +359,12 @@
       <div class="section-card">
         <h2>Latest News</h2>
         <ul class="news-list">
-          <li>Joined Microsoft Research Cambridge as a Research Intern working on sample efficient imitation learning.</li>
-          <li>Served as Scientist in Residence at 4Division and Mila working on Robotics Transformer models.</li>
-          <li>Our paper <em>Behaviour Discovery and Attribution for Explainable Reinforcement Learning</em> appeared in TMLR 2025.</li>
-          <li>Our paper <em>Unsupervised Event Outlier Detection in Continuous Time</em> was accepted at the NeurIPS 2024 Self Supervised Learning Workshop.</li>
-          <li>Our work on Task Oriented Slot Based Cumulant Discovery in General Value Functions was selected as a spotlight at the RLC 2024 workshop.</li>
+          <li>Joined <a href="https://rbcborealis.com/">RBC Borealis</a> as a Machine Learning Researcher in Montréal (September 2026).</li>
+          <li>Our paper <em>The Invisible Hand of Physics: When Video Diffusion Models Know More Than They Show</em> was accepted as a <strong>Spotlight</strong> at NeurIPS 2026 (<a href="https://arxiv.org/abs/2606.05328">arXiv</a>).</li>
+          <li>Our paper <em>When Does Predictive Inverse Dynamics Outperform Behavior Cloning?</em> was accepted at ICML 2026.</li>
+          <li>Our paper <em>Augmentations for Robust and Efficient Imitation Learning in Streamed Video Games</em> was accepted as an <strong>Oral</strong> at IEEE CoG 2026.</li>
+          <li>Our paper <em>Structured Representation Learning with Locally Linear Embeddings and Adaptive Feature Fusion</em> was accepted at TMLR 2026.</li>
+          <li>Completed a Research Internship at Microsoft Research Cambridge on sample efficient imitation learning.</li>
           <li>Received Outstanding Reviewer Awards at ICML 2025 and ICCV 2023.</li>
         </ul>
       </div>
@@ -353,24 +372,42 @@
 
     <section id="research">
       <div class="section-card">
-        <h2>Research</h2>
+        <h2>Research Interests</h2>
         <p>
-          My research focuses on <strong>reinforcement learning</strong>,
-          <strong>representation learning</strong>, and
-          <strong>model based decision making</strong>. I am particularly interested in how
-          agents can learn predictive and structured representations that support efficient
-          learning, exploration, planning, and generalization in complex environments.
+          At <strong>RBC Borealis</strong>, I work on machine learning for <strong>commercial credit</strong>.
         </p>
         <p>
-          More broadly, I am interested in bridging reinforcement learning with world models,
-          self supervised learning, imitation learning, and real world sequential decision problems.
+          Beyond RBC, my research focuses on <strong>reinforcement learning</strong>,
+          <strong>representation learning</strong>, and <strong>world models</strong>. I am particularly
+          interested in how agents can learn predictive and structured representations that support efficient
+          learning, exploration, planning, and generalization, and in connecting reinforcement learning with
+          video diffusion models, self supervised learning, and imitation learning.
         </p>
+        <div class="tags">
+          <span class="tag">Reinforcement Learning</span>
+          <span class="tag">Representation Learning</span>
+          <span class="tag">World Models</span>
+          <span class="tag">Video Diffusion Models</span>
+          <span class="tag">Imitation Learning</span>
+          <span class="tag">Commercial Credit</span>
+        </div>
       </div>
     </section>
 
     <section id="experience">
       <div class="section-card">
         <h2>Experience</h2>
+
+        <div class="experience-item">
+          <div class="role-row">
+            <div class="role-title">Machine Learning Researcher</div>
+            <div class="role-date">Sep 2026 – present</div>
+          </div>
+          <div class="role-org">RBC Borealis, Montréal, Canada</div>
+          <div>
+            Machine learning for commercial credit.
+          </div>
+        </div>
 
         <div class="experience-item">
           <div class="role-row">
@@ -437,6 +474,39 @@
     <section id="publications">
       <div class="section-card">
         <h2>Selected Publications</h2>
+        <p class="note">* denotes equal contribution</p>
+
+        <div class="paper-item">
+          <div class="paper-title">The Invisible Hand of Physics: When Video Diffusion Models Know More Than They Show</div>
+          <div class="paper-meta">
+            Parsa Esmati*, <strong>Somjit Nath*</strong>, Katja Hofmann, Derek Nowrouzezahrai, Samira Ebrahimi Kahou, Majid Mirmehdi · NeurIPS 2026 <strong>(Spotlight)</strong>
+          </div>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2606.05328">Paper</a>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Augmentations for Robust and Efficient Imitation Learning in Streamed Video Games</div>
+          <div class="paper-meta">
+            <strong>Somjit Nath</strong>, Abdelhak Lemkhenter, Pallavi Choudhury, Chris Lovett, Katja Hofmann, Sergio Valcarcel Macua, Lukas Schäfer · IEEE CoG 2026 <strong>(Oral)</strong>
+          </div>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2607.14200">Paper</a>
+            <a href="https://www.microsoft.com/en-us/research/articles/temporal-augmentations-for-streamed-video-games-supplementary-material/">Supplementary</a>
+          </div>
+        </div>
+
+        <div class="paper-item">
+          <div class="paper-title">Structured Representation Learning with Locally Linear Embeddings and Adaptive Feature Fusion</div>
+          <div class="paper-meta">
+            <strong>Somjit Nath</strong>, Jackson J. Cone, Derek Nowrouzezahrai, Samira Ebrahimi Kahou · TMLR 2026
+          </div>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2606.18469">Paper</a>
+            <a href="https://github.com/Somjit77/lle-rl">Code</a>
+          </div>
+        </div>
 
         <div class="paper-item">
           <div class="paper-title">Behaviour Discovery and Attribution for Explainable Reinforcement Learning</div>
@@ -461,7 +531,7 @@
         <div class="paper-item">
           <div class="paper-title">Task Oriented Slot Based Cumulant Discovery in General Value Functions</div>
           <div class="paper-meta">
-            Vincent Michalski, <strong>Somjit Nath</strong>, Derek Nowrouzezahrai, Doina Precup, Samira Ebrahimi Kahou · RLC Workshop 2024 <strong> (Spotlight) </strong>
+            Vincent Michalski, <strong>Somjit Nath</strong>, Derek Nowrouzezahrai, Doina Precup, Samira Ebrahimi Kahou · RLC Workshop 2024 <strong>(Spotlight)</strong>
           </div>
           <div class="paper-links">
             <a href="https://rlbrew-workshop.github.io/papers/43_task_oriented_slot_based_cumul.pdf">Paper</a>
@@ -471,7 +541,7 @@
         <div class="paper-item">
           <div class="paper-title">Spectral Temporal Contrastive Learning</div>
           <div class="paper-meta">
-            Sacha Morin, <strong>Somjit Nath</strong>, Samira Ebrahimi Kahou, Guy Wolf · NeurIPS Workshop 2023
+            Sacha Morin*, <strong>Somjit Nath*</strong>, Samira Ebrahimi Kahou, Guy Wolf · NeurIPS Workshop 2023
           </div>
           <div class="paper-links">
             <a href="https://arxiv.org/pdf/2312.00966">Paper</a>
@@ -562,7 +632,7 @@
         <div class="section-card" id="education">
           <h2>Education</h2>
           <ul class="bullets">
-            <li><strong>McGill University and Mila</strong><br />PhD in Electrical and Computer Engineering, 2022 – present</li>
+            <li><strong>McGill University and Mila</strong><br />PhD Candidate in Electrical and Computer Engineering, 2022 – present</li>
             <li><strong>University of Alberta</strong><br />MSc in Computing Science, 2017 – 2019</li>
             <li><strong>Jadavpur University</strong><br />BE in Electrical Engineering, 2013 – 2017</li>
           </ul>
@@ -574,7 +644,7 @@
 
   <footer class="container">
     <p>
-      Website source inspired by academic personal pages. Last updated 2026.
+      Website source inspired by academic personal pages. Last updated September 2026.
     </p>
   </footer>
 
